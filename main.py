@@ -19,12 +19,7 @@ class DiceGame:
         roll2 = self.die2.roll()
         total = roll1 + roll2
         result = self.evaluate_roll(total)
-        return {
-            'roll1': roll1,
-            'roll2': roll2,
-            'total': total,
-            'result': result
-        }
+        return [roll1, roll2, total, result]
 
     def evaluate_roll(self, total):
         if total in (7, 11):
