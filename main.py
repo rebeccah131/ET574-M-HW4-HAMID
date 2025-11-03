@@ -36,9 +36,6 @@ class DiceGame:
         else:
             return "Invalid Total"
             
-
-
-
 def main():
     print("Welcome to the Dice Game!")
     game = DiceGame()
