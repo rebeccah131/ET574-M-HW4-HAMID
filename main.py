@@ -37,21 +37,26 @@ class DiceGame:
             return "Invalid Total"
             
 
+
+
 def main():
     print("Welcome to the Dice Game!")
     game = DiceGame()
     while True:
-        print("\nMenu:\n  1. Play a round\n  2. Exit")
-        choice = input("Enter your choice: ")
+        print("\nDice Game:")
+        print("1. Play a round")
+        print("2. Exit")
+        choice = input("Choose an option: ")
         if choice == "1":
             outcome = game.play_round()
-            print(f"Die 1: {outcome['roll1']}, Die 2: {outcome['roll2']}, Total: {outcome['total']}")
+            print(f"Die 1: {outcome['roll1']}, Die 2: {outcome['roll2']}")
+            print(f"Total: {outcome['total']}")
             print(f"Result: {outcome['result']}")
         elif choice == "2":
             print("Thanks for playing!")
             break
         else:
-            print("Invalid choice. Try again.")
+            print("Invalid choice. Please enter 1 or 2.")
 
 if __name__ == "__main__":
     main()
