@@ -4,6 +4,8 @@ import random
 
 class Die:
     def __init__(self, sides=6):
+        if sides < 1:
+            raise ValueError("Die must have at least one side.")
         self.sides = sides
 
     def roll(self):
@@ -41,9 +43,9 @@ def main():
         choice = input("Choose an option: ")
         if choice == "1":
             outcome = game.play_round()
-            print(f"Die 1: {outcome['roll1']}, Die 2: {outcome['roll2']}")
-            print(f"Total: {outcome['total']}")
-            print(f"Result: {outcome['result']}")
+            print(f"Die 1: {outcome[0]}, Die 2: {outcome[1]}")
+            print(f"Total: {outcome[2]}")
+            print(f"Result: {outcome[3]}")
         elif choice == "2":
             print("Thanks for playing!")
             break
